@@ -4,16 +4,12 @@
     </head>
 <body>
     <h1>Jessica Garrett's Blog</h1>
+    {% for post in posts %}
     <div>
-    <h2>Blog post 1</h2>
-    <p>Sample blog post blah blah blah talking
-    Sample blog post blah blah blah talking
-  Sample blog post blah blah blah talking
-Sample blog post blah blah blah talking</p>
-  </div>
-    <h2>Blog post 2</h2>
-    <p>more stuffmore stuffmore stuffmore stuffmore stuff
-    more stuffmore stuffmore stuffmore stuffmore stuff
-  more stuffmore stuffmore stuffmore stuffmore stuff</p>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
